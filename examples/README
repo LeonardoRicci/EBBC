@@ -1,0 +1,5 @@
+# This folder contains two datasets, dataset_alpha.dat and dataset_beta.dat
+# 	dataset_alpha.dat is a training set, thus having a 'Class' column.
+#	dataset_beta.dat is a test set, and therefore the 'Class' column is absent.
+# The pipeline present in the file 'examples.R' uses these datasets to show how to use the package functions.
+# The examples reported in 'examples.R' are discussed in more details within the user manual.
