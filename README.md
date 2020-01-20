@@ -1,6 +1,6 @@
-# BCMR package
+# EBBC package
 
-An R package to carry out training and classification analyses on datasets containing multiplets of values of a given measured feature. This package contains a set of functions that implement the analysis algorithm described in
+The EBBC (Expression-Based Bayesian Classifier) is an R package to carry out training and classification analyses on datasets containing multiplets of values of a given measured feature. This package contains a set of functions that implement the analysis algorithm described in
 > L. Ricci, V. Del Vescovo, C. Cantaloni, M. Grasso, M. Barbareschi and M. A. Denti, _Statistical analysis of a Bayesian classifier based on the expression of miRNAs_, BMC Bioinformatics __16__:287, 2015.  
 DOI: [10.1186/s12859-015-0715-9](https://dx.doi.org/10.1186/s12859-015-0715-9)
 
