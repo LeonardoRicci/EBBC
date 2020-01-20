@@ -402,8 +402,8 @@ ebbc_bayes <- function(inputDataset, inputTargetList, inputVersusList=character(
 
 		if (!classifierFlag) {
 			if (normalizerFlag) {
-				rowTarget <- c(paste("\u0394", currentFeature, sep=""), "target", nT, round(xT,local_muAndS_precision), round(sT,local_muAndS_precision), round(shapiroWilkTarget,2), signif(tTestRes[[3]],2))
-				rowVersus <- c(paste("\u0394", currentFeature, sep=""), "versus", nV, round(xV,local_muAndS_precision), round(sV,local_muAndS_precision), round(shapiroWilkVersus,2), signif(tTestRes[[3]],2))
+				rowTarget <- c(paste("Δ", currentFeature, sep=""), "target", nT, round(xT,local_muAndS_precision), round(sT,local_muAndS_precision), round(shapiroWilkTarget,2), signif(tTestRes[[3]],2))
+				rowVersus <- c(paste("Δ", currentFeature, sep=""), "versus", nV, round(xV,local_muAndS_precision), round(sV,local_muAndS_precision), round(shapiroWilkVersus,2), signif(tTestRes[[3]],2))
 			} else {
 				rowTarget <- c(currentFeature, "target", nT, round(xT,local_muAndS_precision), round(sT,local_muAndS_precision), round(shapiroWilkTarget,2), signif(tTestRes[[3]],2))
 				rowVersus <- c(currentFeature, "versus", nV, round(xV,local_muAndS_precision), round(sV,local_muAndS_precision), round(shapiroWilkVersus,2), signif(tTestRes[[3]],2))

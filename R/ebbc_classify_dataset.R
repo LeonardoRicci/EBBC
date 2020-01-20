@@ -156,23 +156,6 @@ ebbc_classifyDataset <- function(inputDataset, inputFeaturesList, coeffList, inp
 	outputDataFrame <- subset(outputDataFrame, select=c("Subject", "Classification", "Score", listOfFeature))
 	outputDataFrame <- outputDataFrame[with(outputDataFrame, order(Score, decreasing=FALSE)),]
 
-	# Remove bias outliers
-	nt <- length(outputDataFrame$Score[outputDataFrame$Classification == "target"])
-	xt <- mean(outputDataFrame$Score[outputDataFrame$Classification == "target"])
-	st <- stats::sd(outputDataFrame$Score[outputDataFrame$Classification == "target"])
-
-	nv <- length(outputDataFrame$Score[outputDataFrame$Classification == "versus"])
-	xv <- mean(outputDataFrame$Score[outputDataFrame$Classification == "versus"])
-	sv <- stats::sd(outputDataFrame$Score[outputDataFrame$Classification == "versus"])
-
-	scoreColumnTarget <- subset(outputDataFrame[outputDataFrame$Classification == "target",], select="Score")
-	scoreColumnVersus <- subset(outputDataFrame[outputDataFrame$Classification == "versus",], select="Score")
-
-	biasOutlierIndex_t <- 1 - stats::pt(sqrt(((scoreColumnTarget$Score - xt) / st)^2), nt)
-	biasOutlierIndex_v <- 1 - stats::pt(sqrt(((scoreColumnVersus$Score - xv) / sv)^2), nv)
-	biasOutlierIndex <- c(biasOutlierIndex_t, biasOutlierIndex_v)
-
-	outputDataFrame <- outputDataFrame[which(biasOutlierIndex > 0.001), ]
 	processedFrameToWrite <- subset(outputDataFrame, select=c("Subject", "Classification", "Score"))
 
 	## Output

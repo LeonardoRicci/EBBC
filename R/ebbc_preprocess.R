@@ -73,7 +73,6 @@ ebbc_preprocess <- function(inputDataset, multipletSize) {
 	selectedDataset <- selectedDataset[is.numeric(selectedDataset$Value) & !is.na(selectedDataset$Value), ]
 
 	setOfSubjects <- unique(as.character(selectedDataset$Subject))
-	# setOfSubjects <- setOfSubjects[order(setOfSubjects)]
 
 	for (subject in setOfSubjects) {
 		singleSubjectFrame <- subset(selectedDataset, selectedDataset$Subject == subject)
